@@ -1,0 +1,94 @@
+/* --- Media Upload Form Container --- */
+.upload-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #f7f9fc;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.upload-form-container h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #34495e;
+    border-bottom: 2px solid #e0e6ed;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+/* --- Form and Inputs --- */
+.upload-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.media-type-select,
+.form-input,
+.form-textarea {
+    padding: 12px 18px;
+    border: 1px solid #c9d2da;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background-color: #fff;
+}
+
+.media-type-select:focus,
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: #1a73e8;
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.25);
+}
+
+.form-textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* --- Buttons --- */
+.submit-button {
+    padding: 14px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #2ecc71;
+    color: white;
+}
+
+.submit-button:hover {
+    background-color: #27ae60;
+}
+
+.submit-button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+.status-message {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 10px;
+    color: #2ecc71;
+}
+
+/* --- Radio button styling --- */
+.upload-options {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.upload-options label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #34495e;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}

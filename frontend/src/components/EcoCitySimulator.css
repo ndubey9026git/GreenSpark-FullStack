@@ -1,0 +1,132 @@
+/* --- Base Game Container --- */
+.eco-city-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter', sans-serif;
+    background-color: #e0f2fe; /* Light sky blue background */
+    border-radius: 12px;
+}
+
+/* --- Header/Stats UI --- */
+.game-ui-header {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 20;
+    border-radius: 12px 12px 0 0;
+}
+
+.stat-box {
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #1f2937;
+}
+
+.year-box { background-color: #d1e8ff; }
+.health-box { background-color: #d1f7d1; }
+.carbon-box { background-color: #ffd1d1; }
+.wealth-box { background-color: #fffac8; }
+
+.dashboard-button {
+    background-color: #0d47a1;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+/* --- 3D Scene Canvas Area --- */
+.game-scene-canvas {
+    flex-grow: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-message {
+    position: absolute;
+    color: #6b7280;
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+/* --- Action/Build Menu UI --- */
+.game-ui-actions {
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 20;
+    border-radius: 0 0 12px 12px;
+}
+
+.action-button-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.action-button {
+    padding: 10px 15px;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.action-button:hover:not(:disabled) {
+    background-color: #2563eb;
+}
+.action-button:disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+}
+
+/* --- Game Overlay --- */
+.game-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+    z-index: 50;
+    border-radius: 12px;
+}
+
+.game-button {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.game-button.primary {
+    background-color: #10b981;
+    color: white;
+}
+
+.game-button.secondary {
+    background-color: #3b82f6;
+    color: white;
+}

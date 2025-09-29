@@ -1,0 +1,73 @@
+/* --- Video Player Page Container --- */
+.video-player-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #f7f9fc;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    font-family: 'Inter', sans-serif;
+    color: #34495e;
+}
+
+/* --- Header & Title --- */
+.video-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #e0e6ed;
+    padding-bottom: 15px;
+}
+
+.video-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a73e8;
+    margin: 0;
+}
+
+/* --- Video Player --- */
+.video-player {
+    background-color: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.video-player video {
+    width: 100%;
+    height: auto;
+}
+
+/* --- Description --- */
+.video-description {
+    font-size: 1rem;
+    color: #6c757d;
+    line-height: 1.6;
+}
+
+/* --- Buttons --- */
+.back-to-learn-button {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.back-to-learn-button:hover {
+    background-color: #5a6268;
+}
+
+.loading-message, .error-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #94a3b8;
+    padding: 50px;
+}

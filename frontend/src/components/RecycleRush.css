@@ -1,0 +1,156 @@
+/* --- General Game Container --- */
+.game-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f0f8ff; /* Light blue background */
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* --- Overlays for Start/End Screen --- */
+.game-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    text-align: center;
+    z-index: 100;
+}
+
+.game-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #4CAF50; /* A nice green */
+}
+
+.final-score {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.game-button {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.game-button.primary {
+    background-color: #4CAF50;
+    color: white;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);
+}
+
+.game-button.secondary {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid white;
+}
+
+/* --- Game UI Header --- */
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background: #e3f2fd;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+}
+
+.score-board, .timer {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1a73e8;
+}
+
+/* --- Game Area --- */
+.game-area {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.waste-item {
+    position: absolute;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: grab;
+    background-color: #3498db; /* Default item color */
+}
+
+.waste-item.correct {
+  background-color: #27ae60;
+  box-shadow: 0 0 15px #27ae60;
+}
+
+.waste-item.incorrect {
+  background-color: #e74c3c;
+  box-shadow: 0 0 15px #e74c3c;
+}
+
+/* --- Bins at the bottom --- */
+.bins-container {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+
+.bin {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 10px;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.bin:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.bin.recycle {
+    background-color: #3498db;
+}
+
+.bin.compost {
+    background-color: #2ecc71;
+}
+
+.bin.trash {
+    background-color: #e74c3c;
+}
