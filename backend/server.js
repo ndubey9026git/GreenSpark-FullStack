@@ -11,7 +11,42 @@ dotenv.config();
 console.log("DEBUG - Loaded MONGO_URI:", process.env.MONGO_URI);
 
 const app = express();
-app.use(cors());
+
+// ======================================================================
+// 🚀 CORS FIX: Explicitly allow the Vercel Frontend URL
+// ======================================================================
+
+// 1. Define the allowed origins, including your Vercel production URL
+const allowedOrigins = [
+    // Vercel Frontend Production URL
+    'https://green-spark-full-stack.vercel.app', 
+    // Vercel Frontend Preview/Development URL (if needed for testing branches)
+    'https://green-spark-full-stack-git-main-nikhil-dubeys-projects-802c3dd0.vercel.app',
+    // Local development (for testing locally against the live backend)
+    'http://localhost:5173', // Common Vite dev port
+    'http://localhost:3000' // Common default dev port
+];
+
+const corsOptions = {
+  // Check if the request's origin is in the allowed list
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  // IMPORTANT: This allows credentials (like cookies/JWT tokens) to be sent
+  credentials: true, 
+};
+
+// Use the configured CORS middleware
+app.use(cors(corsOptions));
+
+// ======================================================================
+// 🌐 END CORS FIX
+// ======================================================================
+
 app.use(express.json());
 
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
@@ -25,7 +60,7 @@ const adminRoutes = require("./routes/admin");
 const assignmentRoutes = require('./routes/assignments');
 const learnRoutes = require('./routes/learn');
 const mediaRoutes = require('./routes/media');
-const gameRoutes = require('./routes/game'); // ✅ ADDED
+const gameRoutes = require('./routes/game');
 
 app.use('/api/auth', authRoutes);
 app.use('/api/challenges', challRoutes);
@@ -35,7 +70,7 @@ app.use('/api/admin', adminRoutes);
 app.use('/api/assignments', assignmentRoutes);
 app.use('/api/learn', learnRoutes);
 app.use('/api/media', mediaRoutes);
-app.use('/api/games', gameRoutes); // ✅ ADDED
+app.use('/api/games', gameRoutes);
 
 // Root
 app.get('/', (req, res) => res.send('🌱 GreenSpark Backend is running!'));
